@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp"
+        android:background="@color/colorDefault"
+        >
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/image_container">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription,MissingConstraints" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/cityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riyadh"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@id/image_container"
+            app:layout_constraintBottom_toBottomOf="@id/image_container"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/pin"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_location"
+            app:layout_constraintStart_toEndOf="@id/cityName"
+            app:layout_constraintTop_toTopOf="@id/cityName"
+            app:layout_constraintBottom_toBottomOf="@id/cityName"
+            android:layout_marginStart="5dp"
+            />
+
+        <FrameLayout
+            android:id="@+id/title_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/time"
+            android:layout_marginStart="10dp"
+            >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:text="title"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                style="@style/post_title" />
+
+        </FrameLayout>
+
+
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riyadh"
+            android:textSize="10sp"
+            android:textStyle="normal"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_container"
+            app:layout_constraintBottom_toTopOf="@id/comment_container"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/comment_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/time"
+            app:layout_constraintBottom_toTopOf="@id/userName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_container"
+            >
+
+            <ImageView
+                android:id="@+id/comment_icon"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_comments"
+                android:layout_alignParentEnd="true"
+                />
+
+            <TextView
+                android:id="@+id/comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(45)"
+                android:textSize="10sp"
+                android:textStyle="normal"
+                android:textColor="@android:color/darker_gray"
+                android:layout_gravity="right"
+                android:layout_toStartOf="@id/comment_icon"
+                android:layout_marginEnd="10dp"
+                />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/userIcon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/comment_container"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user name"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/userIcon"
+            app:layout_constraintBottom_toBottomOf="@id/userIcon"
+            app:layout_constraintEnd_toStartOf="@id/userIcon"
+            android:layout_marginEnd="10dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
